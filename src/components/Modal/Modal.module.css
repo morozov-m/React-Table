@@ -1,0 +1,70 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.modal {
+    position: relative;
+    background: #d1d0ff;
+    border-radius: 12px;
+    width: min(1200px, 95%);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modal-show 220ms ease;
+    color: rgb(33, 33, 33);
+}
+
+.modalTittle {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: rgb(136, 156, 255);
+    padding: 20px;
+    color: rgb(4, 24, 59);
+}
+
+.modalSection {
+    font-size: 19px;
+    margin: 0 20px 20px 20px;
+}
+
+.modalSectionInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modalImg {
+    width: 400px;
+    height: 400px;
+}
+
+.tittleInfo {
+    margin-bottom: 10px;
+    color: rgb(4, 24, 59);
+}
+
+@keyframes modal-show {
+    from {
+        opacity: 0;
+        transform: translateY(-48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modalClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 38px;
+    cursor: pointer;
+}

@@ -1,0 +1,25 @@
+.searchInfo {
+    display: flex;
+    gap: 15px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.searchInfoButton {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    transition: .3s ease-in;
+}
+
+.searchInfoButton:hover {
+    transform: scale(1.2);
+}
+
+.searchInfoText {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 15px;
+}
