@@ -36,19 +36,14 @@ export default function App() {
 
    const removeSearch = () => {
       setSearch('')
+      setPage(1)
    }
 
    const plusPage = () => {
-      removeSearch()
-      removeFilter()
-      removeSort()
       setPage(prev => prev + 1)
    }
 
    const minusPage = () => {
-      removeSearch()
-      removeFilter()
-      removeSort()
       setPage(prev => prev - 1)
    }
 
@@ -110,15 +105,15 @@ export default function App() {
       let URL = `https://dummyjson.com/users?limit=30&skip=${skip}`
 
       if (sort.order && sort.sortBy) {
-         URL = `https://dummyjson.com/users?sortBy=${sort.sortBy}&order=${sort.order}`
+         URL = `https://dummyjson.com/users?limit=30&skip=${skip}&sortBy=${sort.sortBy}&order=${sort.order}`
       }
 
       if (filterValue.value && filterValue.keyUrl) {
-         URL = `https://dummyjson.com/users/filter?key=${filterValue.keyUrl}&value=${filterValue.value}`
+         URL = `https://dummyjson.com/users/filter?key=${filterValue.keyUrl}&value=${filterValue.value}&limit=30&skip=${skip}`
       }
 
       if (search) {
-         URL = `https://dummyjson.com/users/search?q=${search}`
+         URL = `https://dummyjson.com/users/search?q=${search}&limit=30&skip=${skip}`
       }
       setIsLoading(true)
       fetch(URL)
